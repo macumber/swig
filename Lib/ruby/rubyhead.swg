@@ -1,4 +1,5 @@
 #include <ruby.h>
+#include <ruby/encoding.h>
 
 /* Ruby 1.9.1 has a "memoisation optimisation" when compiling with GCC which
  * breaks using rb_intern as an lvalue, as SWIG does.  We work around this
