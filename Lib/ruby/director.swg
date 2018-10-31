@@ -178,13 +178,15 @@ namespace Swig {
     }
 
   public:
-    std::unexpected_handler old;
-    UnknownExceptionHandler(std::unexpected_handler nh = handler) {
-      old = std::set_unexpected(nh);
+  
+    // DLM: std::unexpected_handler is removed in c++17
+    //std::unexpected_handler old;
+    UnknownExceptionHandler(){//std::unexpected_handler nh = handler) {
+      //old = std::set_unexpected(nh);
     }
 
     ~UnknownExceptionHandler() {
-      std::set_unexpected(old);
+      //std::set_unexpected(old);
     }
 #endif
   };
